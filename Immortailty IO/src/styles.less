@@ -1,0 +1,233 @@
+:root {
+  --bodyText: black;
+  --bodyBackground: #C4E9CC; //#efefef;
+  --panelHeader: #a4c9fC;
+  --panelBackground: #e9f7ec; //#fcfcfc;
+  --panelBorder: #a4c9aC; //#121212;
+  --tableDividerColor: #a4c9aC;
+  --itemSlotColor: rgb(252, 252, 239);
+  --itemSlotHighlight: #d8deff;
+  --storeButtonColor: #fdfffc;
+  --storeButtonDisabledColor: #555555;
+  --progressBackgroundColor: #efefef;
+  --healthColor: red;
+  --staminaColor: lightgreen;
+  --nutritionColor: yellow;
+  --manaColor: lightblue;
+  --buttonColor: #fdfffc;
+  --buttonBorder: #a4c9aC;
+  --dialogBackground: #333333;
+  --disabledText: #555555;
+  --textHighlight: green;
+  --buttonHighlightBg: gold;
+  --disabledActivity: white;
+  --lifeEffectColor: #00aa08;
+  --corruptionEffectColor: #aa0008;
+  --popupTextColor: darkgreen;  
+}
+:root .darkMode{
+  --bodyText: #cacaca;
+  --bodyBackground: #000000;
+  --panelHeader: #444444;
+  --panelBackground: #222222;
+  --panelBorder: #5a5a5a;
+  --tableDividerColor: #aaaaaa;
+  --itemSlotColor: #373737;
+  --itemSlotHighlight: #004444;
+  --storeButtonColor: #777777;
+  --storeButtonDisabledColor: #3b3b3b;
+  --progressBackgroundColor: #3b3b3b;
+  --healthColor: red;
+  --staminaColor: lightgreen;
+  --nutritionColor: yellow;
+  --manaColor: #195061;
+  --buttonColor: #373737;
+  --buttonBorder: #999999;
+  --dialogBackground: #333333;
+  --disabledText: #999999;
+  --textHighlight: green;
+  --buttonHighlightBg: blue;
+  --disabledActivity: #5a5a5a;
+  --lifeEffectColor: #00aa08;
+  --corruptionEffectColor: #ff2228;
+  --popupTextColor: #AAFFFF;
+}
+
+
+html { 
+  height: 100%;
+  width: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  overscroll-behavior: none;
+  height: 100%;
+}
+
+span {
+  color: var(--bodyText);
+}
+
+td {
+  color: var(--bodyText);
+}
+
+a {
+  color: var(--bodyText);
+}
+
+h3 {
+  color: var(--bodyText);
+}
+
+.iconButton {
+  border: 1px var(--bodyText) solid;
+  border-radius: 3px;
+}
+
+button {
+  background-color: var(--buttonColor);
+  border: 1px solid var(--buttonBorder);
+  border-radius: 6px;
+  color: var(--bodyText);
+  cursor: pointer;
+}
+
+button:disabled {
+  color: var(--bodyText);
+}
+
+.itemSlot {
+  border-radius: 4px;
+  border: 1px solid var(--panelBorder);
+  padding: 2px;
+  font-size: x-small;
+  text-align: center;
+  border-spacing: 0px;
+  cursor: pointer;
+  background-color: var(--itemSlotColor);
+  color: var(--bodyText);
+  box-sizing: border-box;
+}
+
+.itemSlot.brokenItem {
+  border: 2px dashed var(--panelBorder);
+  filter:brightness(85%);
+}
+
+.textOverflow {
+  // white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  background-color: var(--dialogBackground) !important;
+  padding: 12px;
+}
+
+.progress-bar {
+  overflow: hidden;
+  background-color: var(--progressBackgroundColor);
+  border-radius: 10px;
+  border: 1px solid #555;
+
+  width: 130px;
+  min-height: 8px;
+  height: 30px;
+  height: fit-content;
+  position: relative;
+
+  writing-mode: horizontal-tb !important;
+  display: inline-block;
+  box-sizing: border-box;
+
+  z-index: 0;
+
+  text-align: center;
+}
+
+.progress-bar::after {
+  color: white;
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+        90deg,
+        rgba(0,0,0,0)    0%,
+        rgba(0,0,0,0.4) 40%,
+        rgba(0,0,0,0.4) 60%,
+        rgba(0,0,0,0)  100%);
+}
+
+.progress-bar[value]::after {
+  content: attr(value);
+}
+
+.progress-bar[max]::after {
+  content: attr(value) "/" attr(max);
+}
+
+.progress-bar > span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  background-color: #0075ff;
+
+  display: block;
+  height: 100%;
+}
+
+@keyframes anim-indeterminate {
+  0% {left: 0%};
+  100% {left: 75%}
+}
+
+.progress-bar.indeterminate > span {
+  border-radius: 10px;
+  width: 25%;
+  animation-name: anim-indeterminate;
+  animation-duration: 1.35s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.snackBar {
+    white-space: pre-wrap;
+    background-color: var(--manaColor);
+}
+
+.mat-tooltip {
+  font-size: 14px !important;
+  white-space: pre-line;
+  z-index: 100;
+}
+
+.multiline-tooltip {
+ background-color: red;
+}
+
+.draggableCursor {
+  cursor: move;
+}
+
+.grid-item-resize-icon {
+  color: var(--panelBorder) !important;
+}
+
+.grid-item-content {
+  align-items: normal !important;
+  justify-content: left !important;
+}

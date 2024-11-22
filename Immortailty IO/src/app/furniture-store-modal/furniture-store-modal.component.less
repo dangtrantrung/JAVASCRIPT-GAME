@@ -1,0 +1,39 @@
+@import (reference) "../../styles.less";
+
+.furnitureModal {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 600px;
+}
+
+.itemSlot {
+  width: 75px;
+  height: 75px;
+  background-color: var(--storeButtonColor);
+  line-height: 12px;
+}
+
+.ownedItem {
+  background-color: var(--storeButtonDisabledColor) !important;
+  border: 1px solid var(--storeButtonDisabledColor) !important;
+}
+
+.inventoryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-bottom: 1em;
+  text-align: center;
+  justify-content: center;
+}
+
+hr {
+  margin-top: 2px;
+}
+
+button {
+  width: 90%;
+  display: inline-block;
+  margin-top: 4px;
+}
+

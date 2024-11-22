@@ -1,0 +1,155 @@
+@import (reference) "../../styles.less";
+
+.inventoryContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.inventoryHeader {
+  margin-bottom: 4px;
+}
+
+.inventoryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 3px 0;
+  justify-content: center;
+  gap: 3px;
+  overflow-anchor: none;
+}
+
+.itemSlot {
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  position: relative;
+  padding: 0px;
+}
+
+.sortHighlight {
+  background: linear-gradient(
+        90deg,
+        var(--textHighlight)    0%,
+        rgba(0,0,0,0)  100%);
+}
+
+.selectedItem {
+  background-color: var(--itemSlotHighlight);
+}
+
+.itemSlot .itemName {
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 12px;
+}
+
+.itemQuantity {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  line-height: 15px;
+  padding: 0 4px;
+  width: fit-content;
+  height: fit-content;
+  background: inherit;
+  filter: brightness(80%);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.overflow {
+  overflow: auto;
+}
+
+.inventoryLabelColumn {
+  width: 100px;
+  white-space: nowrap;
+}
+
+.moneyLabelColumn {
+  width: 50px;
+  font-size: 12px;
+}
+
+.moneyColumn {
+  width: 140px;
+  font-size: 12px;
+}
+
+.noFood {
+  font-size: 16px;
+  float: right;
+  margin-top: 4px;
+  vertical-align: middle;
+  color: var(--healthColor);
+}
+
+.moneyContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.moneyColumn {
+  position:relative;
+}
+
+.popupTextColor {
+  color: var(--popupTextColor);
+}
+
+.popupTextNegativeColor {
+  color: red;
+}
+
+.popupText {
+  position: absolute;
+  transform: translateZ(0);
+  z-index: 10000;
+  font-size: x-small;
+}
+
+.cdk-drag-placeholder {
+  opacity: .5;
+}
+
+.selectedItemBox {
+  display: flex;
+  flex-direction: row;
+  min-height: 120px;
+  height: 120px;
+  max-height: 120px;
+  margin-bottom: 4px;
+  margin-left: 4px;
+  margin-right: 4px;
+  border: 1px solid var(--panelBorder);
+}
+
+.selectedItemText {
+  margin-left: 4px;
+  margin-right: 2px;
+  font-size: 12px;
+  overflow-y: auto;
+}
+
+.selectedItemName {
+  border-bottom: 1px solid var(--panelBorder);
+}
+
+.selectedItemTextBody {
+  line-height: 14px;
+}
+
+.itemImagePlaceholder {
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  min-height: 48px;
+  border: solid 1px white;
+}
+
+.itemImage {
+  border: 1px solid;
+}

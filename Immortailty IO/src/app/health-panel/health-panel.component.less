@@ -1,0 +1,55 @@
+@import (reference) "../../styles.less";
+
+.progress-bar {
+  vertical-align: -0.3em;
+}
+
+.health > .progress-bar > span {
+  background-color: var(--healthColor);
+}
+
+.stamina > .progress-bar > span {
+  background-color: var(--staminaColor);
+}
+
+.nourishment > .progress-bar > span {
+  background-color: var(--nutritionColor);
+}
+
+.mana > .progress-bar > span {
+  background-color: var(--manaColor);
+}
+
+.headerCell {
+  width: 210px;
+}
+
+td {
+  font-size:12px;
+}
+
+.yinYang {
+  width: 50px;
+  max-width: 50px;
+  height: 50px;
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.healthPanelContents {
+  display: flex;
+  flex-direction: row;
+}
+
+.flash {
+  box-shadow: 0 0 5px 5px #48abe0;
+  transition: box-shadow ease-out 0.5s;
+ }
+
+.healthContainer {
+  min-height: 90px;
+  min-width: 600px;
+  overflow-y: hidden;
+  width: 100%;
+  height: 100%;
+}

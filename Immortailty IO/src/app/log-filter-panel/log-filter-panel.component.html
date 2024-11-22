@@ -1,0 +1,19 @@
+<div class="darkMode">
+  <h3>Log Filters</h3>
+  <span class="filters">
+    @for (topic of logTopics; track topic) {
+      <input
+        type="checkbox"
+        (change)="topicFilter($event, topic)"
+        [id]="'filter' + topic"
+        [checked]="logService.topicProperties[topic].enabled" />
+      <label [for]="'filter' + topic">
+        Show {{topic}} Log Entries
+        @if (logService.topicProperties[topic].hasNewMessages) {
+          <span class="highlightText"> (new)</span>
+        }
+      </label>
+      <br/>
+    }
+  </span>
+</div>

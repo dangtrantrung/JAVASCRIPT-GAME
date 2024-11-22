@@ -1,0 +1,30 @@
+@import (reference) "../../styles.less";
+
+.itemSlot {
+    width: 90px;
+    height: 90px;
+    font-size: small;
+    display: table-cell;
+    vertical-align: middle;
+    cursor: default;
+}
+
+.achievementGrid {
+    display: flex;
+    flex-wrap: wrap;
+    border-spacing: 4px;
+    max-height: 600px;
+}
+
+.itemSlot > tr {
+    line-height: 12px;
+}
+
+.iconButton {
+    float: right;
+}
+
+.achievementContainer {
+    max-height: 600px;
+    overflow-y: auto;
+}
